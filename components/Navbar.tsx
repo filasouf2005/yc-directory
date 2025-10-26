@@ -22,7 +22,7 @@ const Navbar = async () => {
             <>
               <Link href="/startup/create">
                 <span className=" max-sm-heddin ">Create</span>
-                <BadgePlus className="size-6 sm:heddin"/>
+                <BadgePlus className="size-6 sm:heddin" />
               </Link>
               <form
                 action={async () => {
@@ -31,17 +31,15 @@ const Navbar = async () => {
                 }}
               >
                 <button type="submit">
-                <span className=" max-sm-heddin ">LogOut</span>
+                  <span className=" max-sm-heddin ">LogOut</span>
                   <LogOut className="size-6 sm:heddin text-red-500" />
                 </button>
               </form>
               <Link href={`/user/${session?.id}`}>
-                  <Avatar className="size-10">
-                    <AvatarImage src={session?.user?.image || ''} alt="avatar" />
-                    <AvatarFallback>
-                      AV
-                    </AvatarFallback>
-                  </Avatar>
+                <Avatar className="size-10 rounded-full">
+                  <AvatarImage src={session?.user?.image || ""} alt="avatar" />
+                  <AvatarFallback>AV</AvatarFallback>
+                </Avatar>
               </Link>
             </>
           ) : (
