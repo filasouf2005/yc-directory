@@ -3,9 +3,8 @@ import { client } from "@/sanity/lib/client";
 import { AUTHOR_BY_ID_QUERY } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import UserStartups from "@/components/userStartups";
 import { Suspense } from "react";
-
+import UserStartups from "@/components/UserStartups";
 export const ppr = true;
 
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
