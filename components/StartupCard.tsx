@@ -1,4 +1,4 @@
-import { formatDate } from "@/lib/utils";
+import { formatDate, truncateText } from "@/lib/utils";
 import { EyeIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -49,7 +49,9 @@ const StartupCard = ({ post }: { post: StartupCardType }) => {
         </Link>
       </div>
       <Link href={`/startup/${_id}`}>
-        <p className="startup-card-desc">{description}</p>
+        <p className="startup-card-desc">
+          {truncateText(description ?? "", 1000)}
+        </p>
         <img src={image} alt="palc>>>" className="startup-card_img" />
       </Link>
       <div className="flex-between gap-3 mt-5">
