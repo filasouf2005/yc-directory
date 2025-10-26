@@ -4,7 +4,7 @@ import React from "react";
 import { auth, signIn, signOut } from "@/auth";
 import { redirect } from "next/dist/server/api-utils";
 import { BadgePlus, LogOut } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const Navbar = async () => {
   const session = await auth();
@@ -36,7 +36,7 @@ const Navbar = async () => {
                 </button>
               </form>
               <Link href={`/user/${session?.id}`}>
-                <Avatar className="size-10 rounded-full">
+                <Avatar className="size-10 ">
                   <AvatarImage src={session?.user?.image || ""} alt="avatar" />
                   <AvatarFallback>AV</AvatarFallback>
                 </Avatar>
